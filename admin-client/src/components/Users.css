@@ -1,0 +1,26 @@
+.usermain{
+    display: flex;
+
+}
+.table{
+    padding: 20px;
+    width: 100%;
+}
+table{
+    width: 100%;
+}
+
+tr{
+    border: 2px solid grey;
+
+
+}
+td{
+    border: 2px solid grey;
+
+
+}
+th{
+    border: 2px solid grey;
+
+}

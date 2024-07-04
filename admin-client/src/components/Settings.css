@@ -1,0 +1,192 @@
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+.settingsmain {
+	display: flex;
+	height: 100vh;
+	background: red;
+}
+
+.settinglist {
+	display: flex;
+	gap: 120px;
+	padding: 20px;
+}
+
+.settinglist1 {
+	text-decoration: none;
+}
+
+.settingsmain {
+	display: flex;
+	background-color: rgb(255, 255, 255);
+}
+.set {
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.h12 {
+	width: 100%;
+	height: 200px;
+	display: flex;
+}
+
+.head {
+	background-color: aquamarine;
+	color: black;
+	font-family: sans-serif;
+	font-size: 80px;
+	padding-left: 60px;
+	padding-top: 40px;
+}
+
+.profile {
+	/* display: flex; */
+	position: relative;
+	height: 400px;
+}
+.profile_bg {
+	width: 100%;
+	height: 250px;
+}
+.image img {
+	bottom: 50px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	position: absolute;
+	border: 15px solid #fff;
+
+	border-radius: 50%;
+}
+.lik {
+	display: flex;
+	gap: 10px;
+}
+.cs {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	padding-right: 30px;
+}
+.btn {
+	background-color: rgb(15, 57, 114);
+	color: white;
+	width: 150px;
+	height: 40px;
+	border-radius: 15px;
+}
+
+.main {
+	width: 800px;
+	background-color: rgb(235, 235, 235);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 50px;
+	border: 8px solid rgb(188, 188, 200);
+}
+
+.admin_body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input {
+	width: 500px;
+}
+
+button {
+	background-color: #1b2951;
+	color: white;
+	padding: 5px;
+}
+
+.file {
+}
+
+.preview {
+	width: 50px;
+}
+.inp {
+	padding: 5px;
+	border: 2px solid grey;
+	border-radius: 5px;
+	border-left: transparent;
+	border-right: transparent;
+
+}
+.form {
+	display: flex;
+	/* padding: 20px; */
+	height: 300px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 10px;
+	background-color: rgb(212, 219, 217);
+	border: 2px solid grey;
+	/* overflow: hidden; */
+}
+.form .edit_btn{
+	padding: 7px 30px;
+	border-radius: 10px;
+}
+.mag {
+	gap: 10px;
+}
+
+.headc {
+	color: rgb(24, 43, 211);
+}
+.headp {
+	color: rgb(24, 43, 211);
+}
+.sanin {
+	width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.edb {
+	display: flex;
+	padding: 20px 0 20px 0;
+	justify-content: center;
+	gap: 70px;
+}
+.editbtn {
+	padding: 10px 20px 10px 20px;
+	border-radius: 10px;
+}
+.deletetbtn {
+	padding: 10px 20px 10px 20px;
+	border-radius: 10px;
+}
+.abs{
+	background-color: white;
+	padding:5px;
+}
+.dd{
+	width: 500px;
+	background-color: aqua;
+}
+.btdiv{
+	display: flex;
+	justify-content: end;
+}
+.dltbtnp{
+	padding:10px 20px;
+	border-radius: 10px;
+}
