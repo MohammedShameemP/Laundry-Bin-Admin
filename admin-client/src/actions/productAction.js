@@ -5,7 +5,7 @@ export const addProduct=async (data)=>{
 try {
     const response = await axios.post("http://localhost:2007/api/createProduct",data, { headers });
     return response.data
-    console.log("in axios");
+    // console.log("in axios");
 
     
 } catch (error) {

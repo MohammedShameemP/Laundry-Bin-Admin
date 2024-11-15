@@ -7,7 +7,9 @@ import Box from "@mui/material/Box";
 import Services from "./Services";
 import Products from "./Products";
 import "./Settings.css";
+import Slot from "./Slot";
 // import { service } from "../../../admin-server/controllers/allDataController";
+
 
 function CustomTabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -57,7 +59,7 @@ const Settings = () => {
 							<Tab label="Offers" {...a11yProps(1)} />
 							<Tab label="Service" {...a11yProps(2)} />
 							<Tab label="Products" {...a11yProps(3)} />
-							<Tab label="Item Five" {...a11yProps(4)} />
+							<Tab label="Slot" {...a11yProps(4)} />
 							<Tab label="Item Six" {...a11yProps(5)} />
 							<Tab label="Item Seven" {...a11yProps(6)} />
 							<Tab label="Item Eight" {...a11yProps(7)} />
@@ -82,7 +84,7 @@ const Settings = () => {
 					</CustomTabPanel>
 
 					<CustomTabPanel value={value} index={4}>
-						Item Five
+					<Slot />
 					</CustomTabPanel>
 					<CustomTabPanel value={value} index={5}>
 						Item Six

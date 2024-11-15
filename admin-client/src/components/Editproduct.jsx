@@ -7,7 +7,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Settings.css";
-import { addProduct, editProduct } from "../actions/productAction";
+
 // import { editProducts } from "../actions/serviceAction";
 
 function Editproduct({ fetchAllProducts, product, id }) {

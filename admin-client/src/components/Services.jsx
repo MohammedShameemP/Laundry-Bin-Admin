@@ -59,7 +59,7 @@ function Services() {
 		<div>
 			<div className="cs">
 				<button className="btn" onClick={handleClickOpen}>
-					Create Product
+					Create Service
 				</button>
 			</div>
 
