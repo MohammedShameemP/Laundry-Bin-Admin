@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 
 import Editproduct from "./Editproduct";
 import Deleteproduct from "./Deleteproduct";
-import { addTime } from "../actions/action";
+import { addTime,allTime } from "../actions/action";
 
 function Slot() {
 	const [value, setValue] = useState(0);
@@ -26,14 +26,14 @@ function Slot() {
 	const [startTime, setStartTime] = useState("");
 	const [endTime, setEndTime] = useState("");
 
-	console.log("startTime",startTime);
-	console.log("setEndTime",endTime);
+	// console.log("startTime",startTime);
+	// console.log("setEndTime",endTime);
 	
 	
 
 
-	const [products, setProducts] = useState([]);
-	console.log("products = ", products);
+	const [time, setTime] = useState([]);
+	console.log("time = ", time);
 
 
 	const handleChange = (event, newValue) => {
@@ -50,25 +50,52 @@ function Slot() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("datas passed to axios");
-		const response = await addTime({startTime,endTime});
-		if (response.status) {
-			console.log(response.message);
+	
+		console.log("startTime:", startTime);
+		console.log("endTime:", endTime);
+	
+		try {
+			const response = await addTime(startTime, endTime); 
+			console.log("returned to add res");
+			// Pass values properly
+			if (response.status) {
+				console.log(response.message);
+			}
+		} catch (error) {
+			console.error("Error submitting time:", error);
 		}
+	
 		handleClose();
-
-		// fetchAllProducts();
 	};
 
-	// const fetchAllProducts = async () => {
-	// 	console.log("fetch working");
-	// 	const response = await allProducts();
-	// 	if (response.status) {
-	// 		setProducts(response.data);
-	// 	}
-	// };
+	const handleDelete=async(id)=>{
+		console.log("id",id);
+		try {
+			const reponse=await deleteTime(id);
+			if(reponse.status){
+				console.log(reponse.message);
+				
+			}
+
+		} catch (error) {
+			console.log(res.error);
+			
+			
+		}
+		
+
+
+	}
+
+	const fetchAllProducts = async () => {
+		console.log("fetch working");
+		const response = await allTime();
+		if (response.status) {
+			setTime(response.data);
+		}
+	};
 	useEffect(() => {
-		// fetchAllProducts();
+		fetchAllProducts();
 	}, []);
 
 	return (
@@ -82,21 +109,23 @@ function Slot() {
 			<div className="table">
 				<table>
 					<tr>
-						<th>Slot</th>
-
-
+						<th>Start Time</th>
+						<th>End Time</th>
 						<th>Actions</th>
 					</tr>
-					{products.map((item, index) => (
+					{time.map((item, index) => (
 						<tr key={index}>
 							<td>
+								{item.startTime}
+							</td>
+							<td>
+								{item.endTime}
 							</td>
 
 
 
 							<td className="edb">
-								<div>{ <Editproduct fetchAllProducts={fetchAllProducts} product={item} id={item._id} /> }</div>
-								{ <div>{ <Deleteproduct fetchAllProducts={fetchAllProducts} id={item._id} /> }</div> }
+								{ <div>{ <Button onClick={()=>handleDelete=(item._id)}>Delete</Button> }</div> }
 							</td>
 						</tr>
 					))}
@@ -126,8 +155,8 @@ function Slot() {
 							<div>
 								<label htmlFor="" className="label1">
 									<h2>Time:</h2>
-									<input type="time" name="name" className="inp" placeholder="" onChange={(e) => setStartTime(e.target.value)} />
-									<input type="time" name="name" className="inp" placeholder="" onChange={(e) => setEndTime(e.target.value)} />
+									<input type="time" name="startTime" className="inp" placeholder="" onChange={(e) => setStartTime(e.target.value)} />
+									<input type="time" name="endTime" className="inp" placeholder="" onChange={(e) => setEndTime(e.target.value)} />
 								</label>
 							</div>
 						</form>

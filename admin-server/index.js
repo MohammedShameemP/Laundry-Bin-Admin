@@ -10,7 +10,7 @@ const env =require('dotenv').config();
 
 
 
-const PORT = 2007;
+const PORT = 4007;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -22,9 +22,8 @@ app.use(cookieParser());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-const authUser=require('./router/router')
-app.use('/api',authUser);
-
+const router = require("./router/router");
+app.use("/api", router);
 
 
 
