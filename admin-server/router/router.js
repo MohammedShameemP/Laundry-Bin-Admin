@@ -3,7 +3,7 @@ const { adminLogin } = require("../controllers/auth");
 const dataController = require("../controllers/allDataController");
 const { upload } = require("../config/aws");
 const { createProducts, allProducts, editProduct, deleteProduct } = require("../controllers/productController");
-const { createTime,allTime } = require("../controllers/slot");
+const { createTime,allTime,deleteTime } = require("../controllers/slot");
 const router = express.Router();
 
 // Admin login
@@ -27,5 +27,6 @@ router.delete("/deleteProduct", deleteProduct);
 // Time slot routes
 router.post("/createTime", createTime);
 router.get("/allTime", allTime);
+router.delete("/deleteTime", deleteTime);
 
 module.exports = router;

@@ -57,10 +57,10 @@ export const allTime=async()=>{
 	}
 }
 
-export const deleteTime=async()=>{
+export const deleteTime=async(id)=>{
 	const headers ={"content-type":"application/json"};
 try {
-	const response=await axios.delete("http://localhost:4007/api/allTime");
+	const response=await axios.delete(`http://localhost:4007/api/deleteTime?id=${id}`,{headers});
 	console.log(response.data);
 	return response.data;
 } catch (error) {

@@ -14,9 +14,8 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 
-import Editproduct from "./Editproduct";
-import Deleteproduct from "./Deleteproduct";
-import { addTime,allTime } from "../actions/action";
+
+import { addTime,allTime, deleteTime } from "../actions/action";
 
 function Slot() {
 	const [value, setValue] = useState(0);
@@ -60,6 +59,7 @@ function Slot() {
 			// Pass values properly
 			if (response.status) {
 				console.log(response.message);
+				fetchAllProducts();
 			}
 		} catch (error) {
 			console.error("Error submitting time:", error);
@@ -74,6 +74,7 @@ function Slot() {
 			const reponse=await deleteTime(id);
 			if(reponse.status){
 				console.log(reponse.message);
+				fetchAllProducts();
 				
 			}
 
@@ -125,7 +126,7 @@ function Slot() {
 
 
 							<td className="edb">
-								{ <div>{ <Button onClick={()=>handleDelete=(item._id)}>Delete</Button> }</div> }
+								{ <div>{ <Button onClick={()=>handleDelete(item._id)}>Delete</Button> }</div> }
 							</td>
 						</tr>
 					))}
